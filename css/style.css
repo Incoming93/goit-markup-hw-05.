@@ -70,6 +70,25 @@ button {
 .active {
   color: var(--highlight-color);
 }
+.nav-list a {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.active {
+  color: var(--highlight-color);
+}
+.active::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--highlight-color);
+  bottom: -1px;
+}
+.active {
+  position: relative;
+}
 .nav {
   display: flex;
   align-items: center;
@@ -100,6 +119,12 @@ button {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--second-text-color);
+}
+.mail-item a {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.phone-item a {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mail {
   margin-right: 10px;
@@ -150,6 +175,8 @@ button {
   color: #ffffff;
   background-color: #2196f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 10px 32px;
   width: 200px;
   height: 50px;
@@ -195,7 +222,7 @@ button {
   color: var(--second-text-color);
 }
 /* Иконки */
-.icons-container {
+.features-icons-container {
   background: #f5f4fa;
   border-radius: 4px;
   width: 270px;
@@ -206,6 +233,27 @@ button {
   margin-bottom: 30px;
 }
 /* Чем мы занимаемся */
+.product-actions {
+  width: 100%;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  padding-top: 27px;
+  padding-bottom: 27px;
+}
+.product-actions-item {
+  position: relative;
+}
+.product-actions-text {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  color: var(--white-color);
+}
 .what-we-do {
   padding-bottom: 94px;
 }
@@ -292,6 +340,8 @@ button {
   align-items: center;
   fill: #afb1b8;
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icons-items a:hover,
 .icons-items a:focus {
@@ -332,6 +382,7 @@ button {
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-link:hover {
   border-color: var(--highlight-color);
@@ -342,6 +393,7 @@ button {
 }
 .clients-icon {
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-item:not(:last-child) {
   margin-right: 30px;
@@ -382,6 +434,13 @@ button {
   letter-spacing: 0.03em;
   background-color: #f5f4fa;
   color: var(--main-text-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.photo-cards {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 .portfolio-photo {
   margin-right: -30px;
@@ -420,6 +479,30 @@ button {
   line-height: 1.87;
   letter-spacing: 0.03em;
   color: var(--second-text-color);
+}
+.product-thumb {
+  position: relative;
+  overflow: hidden;
+}
+.product-thumb-item {
+  padding: 63px 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.product-thumb-text {
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  color: var(--white-color);
+}
+.cards:hover .product-thumb-item {
+  transform: translateY(0);
 }
 /* Подвал */
 .footer-section .container {
@@ -484,6 +567,7 @@ button {
   fill: var(--white-color);
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .connect-icons a:hover,
 .connect-icons a:focus {
